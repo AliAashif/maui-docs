@@ -46,9 +46,11 @@ this.Content = barcode;
 The style of the text can be customized using the [`TextStyle`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SfBarcodeGenerator.html#Syncfusion_Maui_Barcode_SfBarcodeGenerator_TextStyle) property of the barcode generator. The `TextStyle` property accepts a [`BarcodeTextStyle`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.BarcodeTextStyle.html) object, which provides the following properties:
 
 - [`FontAttributes`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.BarcodeTextStyle.html#Syncfusion_Maui_Barcode_BarcodeTextStyle_FontAttributes) — Gets or sets the font attributes.
-- [`FontSize`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.BarcodeTextStyle.html#Syncfusion_Maui_Barcode_BarcodeTextStyle_FontSize) — Gets or sets the font size.
 - [`FontFamily`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.BarcodeTextStyle.html#Syncfusion_Maui_Barcode_BarcodeTextStyle_FontFamily) — Gets or sets the font family.
+- [`FontSize`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.BarcodeTextStyle.html#Syncfusion_Maui_Barcode_BarcodeTextStyle_FontSize) — Gets or sets the font size.
 - [`TextColor`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.BarcodeTextStyle.html#Syncfusion_Maui_Barcode_BarcodeTextStyle_TextColor) — Gets or sets the text color.
+
+N> For the complete list of properties available on `BarcodeTextStyle`, see the [API reference](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.BarcodeTextStyle.html).
 
 {% tabs %}
 
@@ -95,39 +97,6 @@ N> Add `using Syncfusion.Maui.Barcode;` to your code file to access the `Barcode
 
 ![.NET MAUI Barcode Generator Text Customization](images/customization/maui-text-customization.png)
 
-### Text spacing
-
-Use the [`TextSpacing`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SfBarcodeGenerator.html#Syncfusion_Maui_Barcode_SfBarcodeGenerator_TextSpacing) property to set the space between the text and the barcode. By default, [`TextSpacing`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SfBarcodeGenerator.html#Syncfusion_Maui_Barcode_SfBarcodeGenerator_TextSpacing) is `2` logical units.
-
-{% tabs %}
-
-{% highlight xaml %}
-
-<barcode:SfBarcodeGenerator Value="12634388927" 
-                            HeightRequest="150"
-                            WidthRequest="300" 
-                            ShowText="True" 
-                            TextSpacing="25">
-</barcode:SfBarcodeGenerator>
-
-{% endhighlight %}
-
-{% highlight C# %}
-
-SfBarcodeGenerator barcode = new SfBarcodeGenerator();
-barcode.HeightRequest = 150;
-barcode.WidthRequest = 300;
-barcode.Value = "12634388927";
-barcode.ShowText = true;
-barcode.TextSpacing = 25;
-this.Content = barcode;
-
-{% endhighlight %}
-
-{% endtabs %}
-
-![.NET MAUI Barcode Generator Text Spacing](images/customization/maui-text-spacing.png)
-
 ### Horizontal text alignment
 
 Use the [`TextAlignment`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SfBarcodeGenerator.html#Syncfusion_Maui_Barcode_SfBarcodeGenerator_TextAlignment) property to control the horizontal alignment of the text. The displayed value can be positioned at `Start`, `Center`, or `End` of the control. The default value of the `TextAlignment` property is `Center`.
@@ -160,15 +129,48 @@ this.Content = barcode;
 
 ![.NET MAUI Barcode Generator Text Alignment](images/customization/maui-text-alignment.png)
 
+### Text spacing
+
+Use the [`TextSpacing`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SfBarcodeGenerator.html#Syncfusion_Maui_Barcode_SfBarcodeGenerator_TextSpacing) property to set the space between the text and the barcode. The property accepts a `double` value and by default, [`TextSpacing`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SfBarcodeGenerator.html#Syncfusion_Maui_Barcode_SfBarcodeGenerator_TextSpacing) is `2` logical units.
+
+{% tabs %}
+
+{% highlight xaml %}
+
+<barcode:SfBarcodeGenerator Value="12634388927" 
+                            HeightRequest="150"
+                            WidthRequest="300" 
+                            ShowText="True" 
+                            TextSpacing="25">
+</barcode:SfBarcodeGenerator>
+
+{% endhighlight %}
+
+{% highlight C# %}
+
+SfBarcodeGenerator barcode = new SfBarcodeGenerator();
+barcode.HeightRequest = 150;
+barcode.WidthRequest = 300;
+barcode.Value = "12634388927";
+barcode.ShowText = true;
+barcode.TextSpacing = 25;
+this.Content = barcode;
+
+{% endhighlight %}
+
+{% endtabs %}
+
+![.NET MAUI Barcode Generator Text Spacing](images/customization/maui-text-spacing.png)
+
 ## Bar customization
 
 ### Bar width customization
 
-Both one-dimensional and two-dimensional symbologies support the [`Module`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SymbologyBase.html#Syncfusion_Maui_Barcode_SymbologyBase_Module) property. This property is used to define the size of the smallest line or dot of the barcode. The `Module` property is available on all symbology classes derived from [`SymbologyBase`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SymbologyBase.html).
+Both one-dimensional and two-dimensional symbologies support the [`Module`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SymbologyBase.html#Syncfusion_Maui_Barcode_SymbologyBase_Module) property. This property is used to define the size of the smallest bar line or module in the barcode. The `Module` property is available on all symbology classes derived from [`SymbologyBase`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SymbologyBase.html).
 
 N> `SymbologyBase` is a public abstract base class. To use a barcode, instantiate one of its derived classes such as `Codabar`, `Code128`, `QRCode`, `DataMatrix`, or other available symbology types.
 
-If this property is not set for one-dimensional barcode, the size of the smallest bar line is determined based on the available width.
+If this property is not set for a one-dimensional barcode, the size of the smallest bar line is determined based on the available width. If the [`Module`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SymbologyBase.html#Syncfusion_Maui_Barcode_SymbologyBase_Module) property is not set for a two-dimensional barcode, the size of the smallest module is calculated based on the minimum of the available width or height. When `Module` is not set, the barcode automatically scales to fit the available space while maintaining proper proportions for scanner readability.
 
 The following code sample shows a one-dimensional barcode with the [`Module`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SymbologyBase.html#Syncfusion_Maui_Barcode_SymbologyBase_Module) property using the [`Codabar`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.Codabar.html) symbology:
 
@@ -188,7 +190,7 @@ The following code sample shows a one-dimensional barcode with the [`Module`](ht
 
 {% endhighlight %}
 
-{% highlight C# hl_lines="7" %}
+{% highlight C# %}
 
 using Syncfusion.Maui.Barcode;
 
@@ -246,15 +248,11 @@ this.Content = barcode;
 
 ![.NET MAUI Barcode Generator Barcode Without Module](images/customization/maui-barcode-without-module.png)
 
-N> When `Module` is not set, the barcode automatically scales to fit the available width while maintaining proper proportions for scanner readability.
-
-If the [`Module`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SymbologyBase.html#Syncfusion_Maui_Barcode_SymbologyBase_Module) property is not set for two-dimensional barcode, the size of the smallest dot is calculated based on the minimum of the available width or height.
-
 The following code sample shows a two-dimensional barcode with the [`Module`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SymbologyBase.html#Syncfusion_Maui_Barcode_SymbologyBase_Module) property using the [`QRCode`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.QRCode.html) symbology:
 
 {% tabs %}
 
-{% highlight xaml hl_lines="6" %}
+{% highlight xaml %}
 
 <barcode:SfBarcodeGenerator Value="123456789" 
                             HeightRequest="150"
@@ -267,7 +265,7 @@ The following code sample shows a two-dimensional barcode with the [`Module`](ht
 
 {% endhighlight %}
 
-{% highlight C# hl_lines="6" %}
+{% highlight C# %}
 
 using Syncfusion.Maui.Barcode;
 
@@ -322,7 +320,7 @@ this.Content = barcode;
 
 ### Bar color customization
 
-The bar color of the barcode can be customized by using the [`ForegroundColor`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SfBarcodeGenerator.html#Syncfusion_Maui_Barcode_SfBarcodeGenerator_ForegroundColor) property. As shown in the following code sample:
+Customize the bar color of the barcode using the [`ForegroundColor`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SfBarcodeGenerator.html#Syncfusion_Maui_Barcode_SfBarcodeGenerator_ForegroundColor) property. By default, [`ForegroundColor`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SfBarcodeGenerator.html#Syncfusion_Maui_Barcode_SfBarcodeGenerator_ForegroundColor) is `null`, as shown in the following code sample:
 
 {% tabs %}
 
@@ -355,7 +353,7 @@ this.Content = barcode;
 
 ### Background color customization
 
-The background color of the barcode can be customized by using the `BackgroundColor` property. As shown in the following code sample:
+Customize the background color of the barcode using the [`BackgroundColor`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SfBarcodeGenerator.html#Syncfusion_Maui_Barcode_SfBarcodeGenerator_BackgroundColor) property. By default, [`BackgroundColor`](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Barcode.SfBarcodeGenerator.html#Syncfusion_Maui_Barcode_SfBarcodeGenerator_BackgroundColor) is `#FFFBFE`, as shown in the following code sample:
 
 {% tabs %}
 
